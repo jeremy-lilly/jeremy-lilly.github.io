@@ -1,113 +1,64 @@
----
----
-
-@string{aps = {American Physical Society,}}
-
-@book{einstein1920relativity,
-  title={Relativity: the Special and General Theory},
-  author={Einstein, Albert},
-  year={1920},
-  publisher={Methuen & Co Ltd},
-  html={relativity.html}
+@article{lillyLocalTimeSteppingShallow2024,
+  title = {Local {{Time-Stepping}} for the {{Shallow Water Equations}} Using {{CFL Optimized Forward-Backward Runge-Kutta Schemes}}},
+  author = {Lilly, Jeremy R. and Capodaglio, Giacomo and Engwrida, Darren and Higdon, Robert L. and Petersen, Mark R.},
+  year = {2024},
+  month = may,
+  number = {arXiv:2405.10505},
+  eprint = {2405.10505},
+  publisher = {arXiv},
+  abstract = {The Courant-Friedrichs-Lewy (CFL) condition is a well known, necessary condition for the stability of explicit time-stepping schemes that effectively places a limit on the size of the largest admittable time-step for a given problem. We formulate and present a new local time-stepping (LTS) scheme optimized, in the CFL sense, for the shallow water equations (SWEs). This new scheme, called FB-LTS, is based on the CFL optimized forward-backward Runge-Kutta schemes from Lilly et al. (2023). We show that FB-LTS maintains exact conservation of mass and absolute vorticity when applied to the TRiSK spatial discretization (Ringler et al., 2010), and provide numerical experiments showing that it retains the temporal order of the scheme on which it is based (second order). In terms of computational performance, we show that when applied to a real-world test case on a highly-variable resolution mesh, the MPAS-Ocean implementation of FB-LTS is up to 10 times faster than the classical four-stage, fourth-order Runge-Kutta method (RK4), and 2.3 times faster than an existing strong stability preserving Runge-Kutta based LTS scheme (LTS3). Despite this significant increase in efficiency, the solutions produced by FB-LTS are qualitatively equivalent to those produced by both RK4 and LTS3.},
+  archiveprefix = {arxiv},
+  keywords = {Mathematics - Numerical Analysis,Physics - Computational Physics},
+  pdf = {Lilly_LTSforSWEs.pdf}
 }
 
-@book{einstein1956investigations,
-  bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
+@article{lillyCFLOptimizedForwardBackward2023,
+  title = {{{CFL Optimized Forward}}{\textendash}{{Backward Runge}}{\textendash}{{Kutta Schemes}} for the {{Shallow-Water Equations}}},
+  author = {Lilly, Jeremy R. and Engwirda, Darren and Capodaglio, Giacomo and Higdon, Robert L. and Petersen, Mark R.},
+  year = {2023},
+  month = dec,
+  journal = {Monthly Weather Review},
+  volume = {151},
+  number = {12},
+  pages = {3191--3208},
+  publisher = {{American Meteorological Society}},
+  issn = {1520-0493, 0027-0644},
+  doi = {10.1175/MWR-D-23-0113.1},
+  abstract = {Abstract We present the formulation and optimization of a Runge{\textendash}Kutta-type time-stepping scheme for solving the shallow-water equations, aimed at substantially increasing the effective allowable time step over that of comparable methods. This scheme, called FB-RK(3,2), uses weighted forward{\textendash}backward averaging of thickness data to advance the momentum equation. The weights for this averaging are chosen with an optimization process that employs a von Neumann{\textendash}type analysis, ensuring that the weights maximize the admittable Courant number. Through a simplified local truncation error analysis and numerical experiments, we show that the method is at least second-order in time for any choice of weights and exhibits low dispersion and dissipation errors for well-resolved waves. Further, we show that an optimized FB-RK(3,2) can take time steps up to 2.8 times as large as a popular three-stage, third-order strong stability-preserving Runge{\textendash}Kutta method in a quasi-linear test case. In fully nonlinear shallow-water test cases relevant to oceanic and atmospheric flows, FB-RK(3,2) outperforms SSPRK3 in admittable time step by factors roughly between 1.6 and 2.2, making the scheme approximately twice as computationally efficient with little to no effect on solution quality. Significance Statement The purpose of this work is to develop and optimize time-stepping schemes for models relevant to oceanic and atmospheric flows. Specifically, for the shallow-water equations we optimize for schemes that can take time steps as large as possible while retaining solution quality. We find that our optimized schemes can take time steps between 1.6 and 2.2 times larger than schemes that cost the same number of floating point operations, translating directly to a corresponding speedup. Our ultimate goal is to use these schemes in climate-scale simulations.},
+  chapter = {Monthly Weather Review},
+  langid = {english},
+  pdf = {Lilly_CFLOptimized.pdf}
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
+@article{lillyStormSurgeModeling2023,
+  title = {Storm {{Surge Modeling}} as an {{Application}} of {{Local Time-Stepping}} in {{MPAS-Ocean}}},
+  author = {Lilly, Jeremy R. and Capodaglio, Giacomo and Petersen, Mark R. and Brus, Steven R. and Engwirda, Darren and Higdon, Robert L.},
+  year = {2023},
+  month = {jan},
+  journal = {Journal of Advances in Modeling Earth Systems},
+  volume = {15},
+  number = {1},
+  pages = {e2022MS003327},
+  issn = {1942-2466},
+  doi = {10.1029/2022MS003327},
+  abstract = {This paper presents the first practical application of local time-stepping (LTS) schemes in the Model for Prediction Across Scales-Ocean (MPAS-O). We use LTS schemes in a single-layer, global ocean model that predicts the storm surge around the eastern coast of the United States during Hurricane Sandy. The variable-resolution meshes used are of unprecedentedly high resolution in MPAS-O, containing cells as small as 125 m wide in Delaware Bay. It is shown that a particular, third-order LTS scheme (LTS3) produces sea-surface height solutions that are of comparable quality to solutions produced by the classical four-stage, fourth-order Runge-Kutta method (RK4) with a uniform time step on the same meshes. Furthermore, LTS3 is up to 35\% faster in the best cases considered, where the number of cells using the coarse time-step relative to those using the fine time-step is as low as 1:1. This shows that LTS schemes are viable for use in MPAS-O with the added benefit of substantially less computational cost. The results of these performance experiments inform us of the requirements for efficient mesh design and configuration of LTS regions for LTS schemes. In particular, we see that for LTS to be efficient on a given mesh, it is important to have enough cells using the coarse time-step relative to those using the fine time-step, typically at least 1:5 to see an increase in performance.},
+  langid = {english},
+  keywords = {local time-stepping,MPAS-O,ocean modeling,storm surge},
+  pdf = {Lilly_StormSurge.pdf}
 }
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein, A. and Podolsky, B. and Rosen, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  location={New Jersey},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  google_scholar_id={qyhmnyLat1gC},
-  video={https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info={. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  selected={true}
+@article{brown2020,
+    title = "Hilbert modular forms and codes over \( {F}_\{p^2\} \)",
+    journal = "Finite Fields and Their Applications",
+    volume = "67",
+    pages = "101731",
+    year = "2020",
+    issn = "1071-5797",
+    url = "http://www.sciencedirect.com/science/article/pii/S1071579720301003",
+    author = "Jim Brown and Beren Gunsolus and Jeremy Lilly and Felice Manganiello",
+    keywords = "Coding theory, Lattices, Theta series",
+    abstract = "Let \( p \) be an odd prime and consider the finite field \( {F}_\{p^2\} \). Given a linear code \( C \subset F_\{p^2\}^n \), we use algebraic number theory to construct an associated lattice \( \Lambda_C \subseteq {O}_L^n \) for \( L \) an algebraic number field and \( {O}_L \) the ring of integers of \( L \). We attach a theta series \( {\theta}_\{\Lambda_{C}\} \) to the lattice \( \Lambda_C \) and prove a relation between \( \theta_\{\Lambda_C\} \) and the complete weight enumerator evaluated on weight one theta series.",
+    pdf = {Brown_HilbertModularForms.pdf}
+
 }
 
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
-}
-
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
-}
-
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
-}
-
-@Article{einstein1905photoelectriceffect,
-  bibtex_show={true},
-  abbr={Ann. Phys.},
-  title="{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}",
-  author={Albert Einstein},
-  abstract={This is the abstract text.},
-  journal={Ann. Phys.},
-  volume={322},
-  number={6},
-  pages={132--148},
-  year={1905},
-  doi={10.1002/andp.19053220607},
-  award={Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name={Nobel Prize}
-}
-
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif},
-  abbr={Vision}
-}
