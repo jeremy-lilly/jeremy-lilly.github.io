@@ -14,5 +14,5 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-I recently graduated from Oregon State University with my PhD in mathematics. I'm interesting in numerical methods for solving PDE, with a particular focus on time-stepping schemes for ocean models!
+I recently graduated from Oregon State University with my PhD in mathematics. I'm interested in numerical methods for solving PDE, with a particular focus on time-stepping schemes for ocean models!
 
