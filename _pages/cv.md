@@ -7,5 +7,5 @@ nav_order: 5
 cv_pdf: LillyJeremy_CV.pdf
 description:
 toc:
-  sidebar: left
+  sidebar:
 ---
