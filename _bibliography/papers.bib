@@ -1,18 +1,20 @@
-@article{lillyLocalTimeSteppingShallow2024,
-  title = {Local {{Time-Stepping}} for the {{Shallow Water Equations}} Using {{CFL Optimized Forward-Backward Runge-Kutta Schemes}}},
-  author = {Lilly, Jeremy R. and Capodaglio, Giacomo and Engwrida, Darren and Higdon, Robert L. and Petersen, Mark R.},
-  year = {2024},
-  month = may,
-  number = {arXiv:2405.10505},
-  eprint = {2405.10505},
-  publisher = {arXiv},
-  abstract = {The Courant-Friedrichs-Lewy (CFL) condition is a well known, necessary condition for the stability of explicit time-stepping schemes that effectively places a limit on the size of the largest admittable time-step for a given problem. We formulate and present a new local time-stepping (LTS) scheme optimized, in the CFL sense, for the shallow water equations (SWEs). This new scheme, called FB-LTS, is based on the CFL optimized forward-backward Runge-Kutta schemes from Lilly et al. (2023). We show that FB-LTS maintains exact conservation of mass and absolute vorticity when applied to the TRiSK spatial discretization (Ringler et al., 2010), and provide numerical experiments showing that it retains the temporal order of the scheme on which it is based (second order). In terms of computational performance, we show that when applied to a real-world test case on a highly-variable resolution mesh, the MPAS-Ocean implementation of FB-LTS is up to 10 times faster than the classical four-stage, fourth-order Runge-Kutta method (RK4), and 2.3 times faster than an existing strong stability preserving Runge-Kutta based LTS scheme (LTS3). Despite this significant increase in efficiency, the solutions produced by FB-LTS are qualitatively equivalent to those produced by both RK4 and LTS3.},
-  archiveprefix = {arxiv},
-  keywords = {Mathematics - Numerical Analysis,Physics - Computational Physics},
+@article{lilly2025,
+  title = {Local Time-Stepping for the Shallow Water Equations Using {{CFL}} Optimized Forward-Backward {{Runge-Kutta}} Schemes},
+  author = {Lilly, Jeremy R. and Capodaglio, Giacomo and Engwirda, Darren and Higdon, Robert L. and Petersen, Mark R.},
+  year = {2025},
+  month = jan,
+  journal = {Journal of Computational Physics},
+  volume = {520},
+  pages = {113511},
+  issn = {0021-9991},
+  doi = {10.1016/j.jcp.2024.113511},
+  abstract = {The Courant--Friedrichs--Lewy (CFL) condition is a well known, necessary condition for the stability of explicit time-stepping schemes that effectively places a limit on the size of the largest admittable time-step for a given problem. We formulate and present a new local time-stepping (LTS) scheme optimized, in the CFL sense, for the shallow water equations (SWEs). This new scheme, called FB-LTS, is based on the CFL optimized forward-backward Runge-Kutta schemes from Lilly et al. [16]. We show that FB-LTS maintains exact conservation of mass and absolute vorticity when applied to the TRiSK spatial discretization [21], and provide numerical experiments showing that it retains the temporal order of the scheme on which it is based (second order). We implement FB-LTS, along with a certain operator splitting, in MPAS-Ocean to test computational performance. This scheme, SplitFB-LTS, is up to 10 times faster than the classical four-stage, fourth-order Runge-Kutta method (RK4), and 2.3 times faster than an existing strong stability preserving Runge-Kutta based LTS scheme with the same operator splitting (SplitLTS3). Despite this significant increase in efficiency, the solutions produced by SplitFB-LTS are qualitatively equivalent to those produced by both RK4 and SplitLTS3.},
+  keywords = {CFL condition,MPAS-Ocean,Shallow water,Storm surge,Time-stepping,TRiSK},
   pdf = {Lilly_LTSforSWEs.pdf}
 }
 
-@article{lillyCFLOptimizedForwardBackward2023,
+
+@article{lilly2023cfl,
   title = {{{CFL Optimized Forward}}{\textendash}{{Backward Runge}}{\textendash}{{Kutta Schemes}} for the {{Shallow-Water Equations}}},
   author = {Lilly, Jeremy R. and Engwirda, Darren and Capodaglio, Giacomo and Higdon, Robert L. and Petersen, Mark R.},
   year = {2023},
@@ -30,7 +32,7 @@
   pdf = {Lilly_CFLOptimized.pdf}
 }
 
-@article{lillyStormSurgeModeling2023,
+@article{lilly2023storm,
   title = {Storm {{Surge Modeling}} as an {{Application}} of {{Local Time-Stepping}} in {{MPAS-Ocean}}},
   author = {Lilly, Jeremy R. and Capodaglio, Giacomo and Petersen, Mark R. and Brus, Steven R. and Engwirda, Darren and Higdon, Robert L.},
   year = {2023},
@@ -54,7 +56,7 @@
     pages = "101731",
     year = "2020",
     issn = "1071-5797",
-    url = "http://www.sciencedirect.com/science/article/pii/S1071579720301003",
+    doi = {10.1016/j.ffa.2020.101731},
     author = "Jim Brown and Beren Gunsolus and Jeremy Lilly and Felice Manganiello",
     keywords = "Coding theory, Lattices, Theta series",
     abstract = "Let \( p \) be an odd prime and consider the finite field \( {F}_\{p^2\} \). Given a linear code \( C \subset F_\{p^2\}^n \), we use algebraic number theory to construct an associated lattice \( \Lambda_C \subseteq {O}_L^n \) for \( L \) an algebraic number field and \( {O}_L \) the ring of integers of \( L \). We attach a theta series \( {\theta}_\{\Lambda_{C}\} \) to the lattice \( \Lambda_C \) and prove a relation between \( \theta_\{\Lambda_C\} \) and the complete weight enumerator evaluated on weight one theta series.",
