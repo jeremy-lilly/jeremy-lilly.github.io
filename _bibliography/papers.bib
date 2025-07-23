@@ -1,3 +1,18 @@
+@article{danis2025,
+  title = {{{High-Order Tensor-Train Finite Volume Methods}} for {{Shallow Water Equations}}},
+  author = {Danis, M. Engin and Truong, Duc P. and DeSantis, Derek and Lilly, Jeremy and Petersen, Mark R. and Rasmussen, Kim {\O} and Alexandrov, Boian S.},
+  year = {2025},
+  month = jun,
+  journal = {Monthly Weather Review},
+  publisher = {American Meteorological Society},
+  issn = {1520-0493, 0027-0644},
+  doi = {10.1175/MWR-D-24-0165.1},
+  abstract = {In this paper, we introduce high-order tensor-train (TT) finite volume methods for the Shallow Water Equations (SWEs). We present the implementation of the 3rd order Upwind and the 5th order Upwind and Weighted Essentially Non-Oscillatory (WENO) reconstruction schemes in the TT format. It is shown in detail that the linear upwind schemes can be implemented by directly manipulating the TT cores while the WENO scheme requires the use of TT cross interpolation for the nonlinear reconstruction. In the development of numerical fluxes, we directly compute the flux for the linear SWEs without using TT rounding or cross interpolation. For the nonlinear SWEs where the TT reciprocal of the shallow water layer thickness is needed for fluxes, we develop an approximation algorithm using Taylor series to compute the TT reciprocal. The performance of the TT finite volume solver with linear and nonlinear reconstruction options is investigated under a physically relevant set of validation problems. In all test cases, the TT finite volume method maintains the formal high-order accuracy of the corresponding traditional finite volume method. In terms of speed, the TT solver achieves up to 124x acceleration of the traditional full-tensor scheme.},
+  chapter = {Monthly Weather Review},
+  langid = {english},
+  pdf = {Danis_TTSWE.pdf}
+}
+
 @article{lilly2025,
   title = {Local Time-Stepping for the Shallow Water Equations Using {{CFL}} Optimized Forward-Backward {{Runge-Kutta}} Schemes},
   author = {Lilly, Jeremy R. and Capodaglio, Giacomo and Engwirda, Darren and Higdon, Robert L. and Petersen, Mark R.},
